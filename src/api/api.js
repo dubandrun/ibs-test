@@ -1,4 +1,6 @@
 import * as axios from 'axios'
 
-export const getWeather = () => (axios.get(``).then(res => res))
+const getWeatherData = (city) => (axios.get(``).then(res => console.log(res)))
+
+export default getWeatherData
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Results({}) {
+function Results({cityWeatherData}) {
   return (
     <>
       <div className="search__current-weather">Текущая погода: {} </div>

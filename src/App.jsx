@@ -1,13 +1,13 @@
 import './App.css';
-import Results from './components/Results';
-import SearchForm from './components/SearchForm';
+import ResultsContainer from './containers/ResultsContainer';
+import SearchFormContainer from './containers/SearchFormContainer';
 
-function App({}) {
+function App() {
   return (
     <div className="App">
       <div className="search">
-        <SearchForm />
-        <Results />
+        <SearchFormContainer />
+        <ResultsContainer />
       </div>
     </div>
   );

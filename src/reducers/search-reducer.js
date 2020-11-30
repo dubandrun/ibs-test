@@ -1,29 +1,28 @@
 import { 
-  GET_WEATHER, 
+  SET_WEATHER_DATA, 
   SET_LOADING, 
-  SET_CITY 
+  SET_SEARCH_CITY 
 } from '../constants'
 
 const initialState = {
-  data: [],
+  cityWeatheData: [],
   isLoading: false,
-  city: ''
+  searchQuery: ''
 }
 
-const seachReducer = (state = initialState, action) => {
+const weather = (state = initialState, action) => {
   switch(action.type) {
-    case GET_WEATHER: {
+    case SET_WEATHER_DATA: {
       return {
         ...state,
-        data: action.payload,
-        isLoading: true
+        cityWeatheData: action.payload,
       }
     }
 
-    case SET_CITY: {
+    case SET_SEARCH_CITY: {
       return {
         ...state,
-        city: action.payload
+        searchQuery: action.payload
       } 
     }
 
@@ -38,4 +37,4 @@ const seachReducer = (state = initialState, action) => {
   }
 }
 
-export default seachReducer
+export default weather
