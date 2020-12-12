@@ -2,15 +2,21 @@ import React from 'react'
 import { connect } from 'react-redux'
 import Results from '../components/Results'
 
-function ResultsContainer({cityWeatherData}) {
+function ResultsContainer({ currentWeather, fiveDaysWeather, isLoading }) {
   return (
-    <Results cityWeatherData={cityWeatherData}/>
+    <Results 
+      currentWeather={currentWeather}
+      fiveDaysWeather={fiveDaysWeather}
+      isLoading={isLoading}
+    />
   )
 }
 
 const mapStateToProps = (state) => {
   return {
-    cityWeatherData: state.cityWeatherData
+    currentWeather: state.currentWeather,
+    fiveDaysWeather: state.fiveDaysWeather,
+    isLoading: state.isLoading,
   }
 }
 

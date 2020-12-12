@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import SearchForm from '../components/SearchForm'
 import { setSearchQuery } from '../actions/search-action'
@@ -9,13 +9,19 @@ function SearchFormContainer({
   searchQuery,
   getCityWeather
 }) {
+
+  const handleGetCurrentWeather = (e, searchQuery) => {
+    e.preventDefault()
+    getCityWeather(searchQuery)
+  }
+
   const handleInputChange = (e) => (setSearchQuery(e.target.value))
 
   return (
     <SearchForm
       handleInputChange={handleInputChange} 
       searchQuery={searchQuery}
-      getCityWeather={getCityWeather}
+      handleGetCurrentWeather={handleGetCurrentWeather}
     />
   )
 }

@@ -5,7 +5,8 @@ import {
 } from '../constants'
 
 const initialState = {
-  cityWeatheData: [],
+  currentWeather: {},
+  fiveDaysWeather: {},
   isLoading: false,
   searchQuery: ''
 }
@@ -15,7 +16,7 @@ const weather = (state = initialState, action) => {
     case SET_WEATHER_DATA: {
       return {
         ...state,
-        cityWeatheData: action.payload,
+        currentWeather: action.payload,
       }
     }
 

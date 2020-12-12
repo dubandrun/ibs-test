@@ -4,7 +4,7 @@ import SearchFormContainer from './containers/SearchFormContainer';
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       <div className="search">
         <SearchFormContainer />
         <ResultsContainer />

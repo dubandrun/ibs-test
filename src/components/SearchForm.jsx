@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SearchForm({
   searchQuery, 
-  getCityWeather, 
+  handleGetCurrentWeather, 
   handleInputChange
 }) {
   return (
@@ -14,7 +14,7 @@ export default function SearchForm({
           value={searchQuery}
           className="search__input" 
           placeholder="Введите название города..."/>
-        <button type="submit" onClick={getCityWeather}>Поиск</button>
+        <button type="submit" onClick={(e) => handleGetCurrentWeather(e, searchQuery)}>Поиск</button>
       </form> 
     </>
   )
