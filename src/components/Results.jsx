@@ -1,40 +1,49 @@
 import React from "react";
-import Preloader from "./Preloader";
+import "./Results.css";
 
-function Results({ currentWeather, fiveDaysWeather, isLoading }) {
-  const { name, weather, main, wind } = currentWeather;
+function Results({ currentWeather, fiveDaysWeather }) {
+  const { name, weather, main } = currentWeather;
   const { description, icon } = weather[0];
   const { temp, feels_like, temp_min, temp_max } = main;
-  const { speed } = wind;
+  const currentDate = new Date().toLocaleString("ru", {
+    hour: "numeric",
+    minute: "numeric",
+    month: "long",
+    day: "numeric",
+    weekday: "short",
+  });
+  const weatherDescription = description[0].toUpperCase() + description.substr(1)
+  
   return (
-    <>
-      {!isLoading ? (
-        <div className="results">
-          <div className="results__current">
-            <p className="results__current-weather">{name}</p>
-            <p className="results__current-weather">Текущая дата</p>
-            <div className="results__temp-container">
-              <img src="" alt="иконка погоды" className="results__icon" />
-              <p className="results__current-weather">{Math.round(temp)}</p>
-            </div>
-            <p className="results__current-weather">{description}</p>
-            <p className="results__current-weather">
-              Ощущается как {Math.round(feels_like)}
-            </p>
-            <p className="results__current-weather">
-              {temp_max}/{temp_min}
-            </p>
-            <p className="results__current-weather">
-              Скорость ветра {speed} км/ч
-            </p>
+    <div className="results">
+      <div className="results__current">
+        
+        <div className="results__section-left">
+          <p className="results__city">{name}</p>
+          <p className="results__date">{currentDate}</p>
+          <div className="results__temp-container">
+            <img
+              src={`http://openweathermap.org/img/wn/${icon}.png`}
+              alt="иконка погоды"
+              className="results__icon"
+            />
+            <p className="results__temp">{Math.round(temp)}&deg;</p>
           </div>
-
-          <div className="result__five-days"></div>
         </div>
-      ) : (
-        <Preloader />
-      )}
-    </>
+        <div className="results__section-right">
+          <p className="results__description">{weatherDescription}</p>
+          <p className="results__min-max-temp">
+            {Math.round(temp_min)}&deg;/{Math.round(temp_max)}&deg;
+          </p>
+          <p className="results__feels-like">
+            Ощущается как {Math.round(feels_like)}&deg;
+          </p>
+        </div>
+        
+      </div>
+
+      <div className="result__five-days"></div>
+    </div>
   );
 }
 

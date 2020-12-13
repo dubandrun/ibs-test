@@ -1,0 +1,67 @@
+.results {
+
+}
+
+.results__current {
+  display: flex;
+  width: max-content;
+  margin: auto;
+}
+
+.results__section-left {
+  margin-right: 30px;
+}
+
+.results__section-right {
+  text-align: right;
+}
+
+.results__city {
+  color: #fff;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.results__date {
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.results__temp-container {
+  display: flex;
+  width: max-content;
+  align-items: center;
+}
+
+.results__icon {
+  width: 100px;
+  height: auto;
+}
+
+.results__temp {
+  width: max-content;
+  color: #fff;
+  font-size: 70px;
+  font-weight: bold;
+}
+
+.results__description {
+  color: whitesmoke;
+  font-size: 30px;
+  padding-top: 84px;
+}
+
+.results__feels-like {
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.results__min-max-temp {
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.results__wind {
+  color: whitesmoke;
+  font-size: 30px;
+}

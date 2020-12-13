@@ -1,7 +1,8 @@
 .app {
   margin: auto;
+  padding-top: 100px;
   max-width: 1024px;
-  border-radius: 10px;
-  position: relative;
-  background: rgba(255,255,255, 0.7);
+  height: 600px;
+  border-radius: 40px;
+  background: rgba(15, 27, 38, 0.4);
 }

@@ -1,13 +1,15 @@
 import { 
   SET_WEATHER_DATA, 
   SET_LOADING, 
-  SET_SEARCH_CITY 
+  SET_SEARCH_CITY, 
+  SET_INITIALIZING
 } from '../constants'
 
 const initialState = {
   currentWeather: {},
   fiveDaysWeather: {},
   isLoading: false,
+  isInitialized: false,
   searchQuery: ''
 }
 
@@ -31,6 +33,13 @@ const weather = (state = initialState, action) => {
       return {
         ...state,
         isLoading: action.payload
+      } 
+    }
+
+    case SET_INITIALIZING: {
+      return {
+        ...state,
+        isInitialized: action.payload
       } 
     }
 

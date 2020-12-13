@@ -4,6 +4,7 @@ body {
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
   background: url('./assets/images/mount-min.jpg');
   background-repeat: no-repeat;
   background-size: cover

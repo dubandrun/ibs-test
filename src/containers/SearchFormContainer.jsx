@@ -10,7 +10,7 @@ function SearchFormContainer({
   getCityWeather
 }) {
 
-  const handleGetCurrentWeather = (e, searchQuery) => {
+  const handleGetCurrentWeather = (e) => {
     e.preventDefault()
     getCityWeather(searchQuery)
   }

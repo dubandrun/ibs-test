@@ -1,15 +1,24 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import Results from '../components/Results'
+import React from "react";
+import { connect } from "react-redux";
+import Preloader from "../components/Preloader";
+import Results from "../components/Results";
 
-function ResultsContainer({ currentWeather, fiveDaysWeather, isLoading }) {
+function ResultsContainer({
+  currentWeather,
+  fiveDaysWeather,
+  isLoading,
+  isInitialized,
+}) {
   return (
-    <Results 
-      currentWeather={currentWeather}
-      fiveDaysWeather={fiveDaysWeather}
-      isLoading={isLoading}
-    />
-  )
+    <>
+      {isLoading && <Preloader />}
+      {isInitialized && <Results
+        currentWeather={currentWeather}
+        fiveDaysWeather={fiveDaysWeather}
+      />
+      }
+    </>
+  );
 }
 
 const mapStateToProps = (state) => {
@@ -17,7 +26,8 @@ const mapStateToProps = (state) => {
     currentWeather: state.currentWeather,
     fiveDaysWeather: state.fiveDaysWeather,
     isLoading: state.isLoading,
-  }
-}
+    isInitialized: state.isInitialized,
+  };
+};
 
-export default connect(mapStateToProps, {})(ResultsContainer)
+export default connect(mapStateToProps, {})(ResultsContainer);

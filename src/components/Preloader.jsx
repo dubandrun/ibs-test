@@ -3,9 +3,9 @@ import './Preloader.css'
 
 const Preloader = () => {
   return (
-    <div class="preloader">
-      <div class="preloader__img"></div>
-      <p class="preloader__text">Пожалуйста, подождите</p>
+    <div className="preloader">
+      <div className="preloader__img"></div>
+      <p className="preloader__text">Пожалуйста, подождите.</p>
     </div>
   )
 }
