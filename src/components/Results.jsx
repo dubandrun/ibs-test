@@ -1,4 +1,5 @@
 import React from "react";
+import DayCard from "./DayCard";
 import "./Results.css";
 
 function Results({ currentWeather, fiveDaysWeather }) {
@@ -42,7 +43,13 @@ function Results({ currentWeather, fiveDaysWeather }) {
         
       </div>
 
-      <div className="result__five-days"></div>
+      <div className="results__five-days">
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+        <DayCard />
+      </div>
     </div>
   );
 }

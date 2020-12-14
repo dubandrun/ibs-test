@@ -1,8 +1,8 @@
 .app {
   margin: auto;
-  padding-top: 100px;
-  max-width: 1024px;
-  height: 600px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 60%;
   border-radius: 40px;
   background: rgba(15, 27, 38, 0.4);
 }

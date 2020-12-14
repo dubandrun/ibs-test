@@ -4,10 +4,10 @@ body {
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100vh;
   background: url('./assets/images/mount-min.jpg');
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+  height: 100vh;
 }
 
 code {
@@ -19,4 +19,10 @@ code {
   box-sizing: border-box;
   margin: 0;
   padding: 0
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  height: 100%;
 }

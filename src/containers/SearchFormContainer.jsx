@@ -7,12 +7,13 @@ import { getCityWeather } from '../thunk/search-thunk'
 function SearchFormContainer({
   setSearchQuery,
   searchQuery,
+  coordinates,
   getCityWeather
 }) {
 
   const handleGetCurrentWeather = (e) => {
     e.preventDefault()
-    getCityWeather(searchQuery)
+    getCityWeather(searchQuery, coordinates)
   }
 
   const handleInputChange = (e) => (setSearchQuery(e.target.value))
@@ -28,7 +29,8 @@ function SearchFormContainer({
 
 const mapStateToProps = (state) => {
   return {
-    searchQuery: state.searchQuery
+    searchQuery: state.searchQuery,
+    coordinates: state.coordinates
   }
 }
 

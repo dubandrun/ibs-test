@@ -1,0 +1,22 @@
+.card {
+  margin-right: 75px;
+  text-align: center;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.card__date {
+  color: whitesmoke;
+  font-size: 30px;
+}
+
+.card__image {
+
+}
+
+.card__temp {
+  color: whitesmoke;
+  font-size: 30px;
+}

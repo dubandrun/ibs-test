@@ -1,11 +1,14 @@
 .results {
-
+  /* background: rgba(15, 27, 38, 0.4);
+  border-radius: 40px; */
 }
 
 .results__current {
   display: flex;
   width: max-content;
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 30px;
 }
 
 .results__section-left {
@@ -17,6 +20,7 @@
 }
 
 .results__city {
+  max-width: 550px;
   color: #fff;
   font-size: 70px;
   font-weight: bold;
@@ -49,6 +53,7 @@
   color: whitesmoke;
   font-size: 30px;
   padding-top: 84px;
+  margin-bottom: 5px;;
 }
 
 .results__feels-like {
@@ -59,9 +64,16 @@
 .results__min-max-temp {
   color: whitesmoke;
   font-size: 30px;
+  margin-bottom: 5px;
 }
 
 .results__wind {
   color: whitesmoke;
   font-size: 30px;
+}
+
+.results__five-days {
+  margin: auto;
+  display: flex;
+  width: max-content;
 }
