@@ -1,16 +1,16 @@
 import React from "react";
-import "./DayCard.css"
+import "./DayCard.css";
 
-function DayCard({}) {
+function DayCard({ icon, temp, date }) {
   return (
     <div className="card">
-      <div className="card__date">21 Пн</div>
+      <div className="card__date">{date}</div>
       <img
-        src={`http://openweathermap.org/img/wn/04d.png`}
+        src={`http://openweathermap.org/img/wn/${icon}.png`}
         alt="иконка погоды"
         className="card__image"
       />
-      <div className="card__temp">+20&deg;</div>
+      <div className="card__temp">{temp}&deg;</div>
     </div>
   );
 }

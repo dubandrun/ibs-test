@@ -3,12 +3,14 @@ import {
   setWeatherData,
   setInitializing,
   setSearchQuery,
-  setFiveDaysWeatherData
+  setFiveDaysWeatherData,
+  setError,
 } from "../actions/search-action";
 import { getWeatherData, getFiveDaysWeatherData } from "../api/api";
 
 export const getCityWeather = (city) => async (dispatch) => {
   try {
+    dispatch(setError(false));
     dispatch(setLoading(true));
     dispatch(setInitializing(false));
 
@@ -18,14 +20,15 @@ export const getCityWeather = (city) => async (dispatch) => {
 
     const lat = weatherData.coord.lat;
     const lon = weatherData.coord.lon;
-    
-    const coordinates = await getFiveDaysWeatherData(lon, lat)
+    const coordinates = await getFiveDaysWeatherData(lon, lat);
 
     dispatch(setFiveDaysWeatherData(coordinates));
     dispatch(setInitializing(true));
     dispatch(setLoading(false));
-    dispatch(setSearchQuery(''));
+    dispatch(setSearchQuery(""));
   } catch (error) {
+    dispatch(setLoading(false));
+    dispatch(setError(true));
     console.log(error);
   }
 };

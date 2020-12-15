@@ -2,23 +2,23 @@ import React from "react";
 import DayCard from "./DayCard";
 import "./Results.css";
 
-function Results({ currentWeather, fiveDaysWeather }) {
+function Results({
+  currentWeather,
+  fiveDaysWeather,
+  currentDate,
+  getFiveDaysDates,
+}) {
   const { name, weather, main } = currentWeather;
   const { description, icon } = weather[0];
   const { temp, feels_like, temp_min, temp_max } = main;
-  const currentDate = new Date().toLocaleString("ru", {
-    hour: "numeric",
-    minute: "numeric",
-    month: "long",
-    day: "numeric",
-    weekday: "short",
-  });
-  const weatherDescription = description[0].toUpperCase() + description.substr(1)
-  
+  const { daily } = fiveDaysWeather;
+  const fiveDaysData = daily.slice(1, 6);
+  const weatherDescription =
+    description[0].toUpperCase() + description.substr(1);
+
   return (
     <div className="results">
       <div className="results__current">
-        
         <div className="results__section-left">
           <p className="results__city">{name}</p>
           <p className="results__date">{currentDate}</p>
@@ -40,15 +40,17 @@ function Results({ currentWeather, fiveDaysWeather }) {
             Ощущается как {Math.round(feels_like)}&deg;
           </p>
         </div>
-        
       </div>
 
       <div className="results__five-days">
-        <DayCard />
-        <DayCard />
-        <DayCard />
-        <DayCard />
-        <DayCard />
+        {fiveDaysData.map((day, i) => (
+          <DayCard
+            key={day.dt}
+            icon={day.weather[0].icon}
+            temp={Math.round(day.temp.day)}
+            date={getFiveDaysDates()[i]}
+          />
+        ))}
       </div>
     </div>
   );

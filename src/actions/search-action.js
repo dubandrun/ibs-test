@@ -1,9 +1,10 @@
 import {
   SET_WEATHER_DATA,
-  SET_SEARCH_CITY,
   SET_LOADING,
+  SET_SEARCH_CITY,
   SET_INITIALIZING,
-  SET_FIVE_DAYS_WEATHER_DATA
+  SET_FIVE_DAYS_WEATHER_DATA,
+  SET_ERROR,
 } from "../constants";
 
 export const setWeatherData = (data) => ({
@@ -29,4 +30,9 @@ export const setInitializing = (loading) => ({
 export const setFiveDaysWeatherData = (fiveDaysWeatherData) => ({
   type: SET_FIVE_DAYS_WEATHER_DATA,
   payload: fiveDaysWeatherData,
+});
+
+export const setError = (result) => ({
+  type: SET_ERROR,
+  payload: result,
 });

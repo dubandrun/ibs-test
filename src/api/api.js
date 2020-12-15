@@ -8,10 +8,14 @@ const instance = axios.create({
 
 export const getWeatherData = (city) =>
   instance
-    .get(`weather?q=${city}&lang=ru&units=metric&appid=${API_KEY}`)
+    .get(
+      `weather?q=${city}&lang=ru&units=metric&appid=${API_KEY}`
+    )
     .then((res) => res.data);
 
 export const getFiveDaysWeatherData = (lon, lat) =>
   instance
-    .get(`onecall?lat=${lat}&lon=${lon}2&exclude=current,minutely,hourly,alerts&lang=ru&units=metric&appid=${API_KEY}`)
+    .get(
+      `onecall?lat=${lat}&lon=${lon}2&exclude=current,minutely,hourly,alerts&lang=ru&units=metric&appid=${API_KEY}`
+    )
     .then((res) => res.data);
