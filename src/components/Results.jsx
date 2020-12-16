@@ -1,13 +1,14 @@
 import React from "react";
 import DayCard from "./DayCard";
 import "./Results.css";
+import PropTypes from "prop-types";
 
-function Results({
+const Results = ({
   currentWeather,
   fiveDaysWeather,
   currentDate,
   getFiveDaysDates,
-}) {
+}) => {
   const { name, weather, main } = currentWeather;
   const { description, icon } = weather[0];
   const { temp, feels_like, temp_min, temp_max } = main;
@@ -54,6 +55,24 @@ function Results({
       </div>
     </div>
   );
-}
+};
+
+Results.propTypes = {
+  currentWeather: PropTypes.shape({
+    name: PropTypes.string,
+    weather: PropTypes.arrayOf(
+      PropTypes.shape({
+        description: PropTypes.string,
+        icon: PropTypes.string,
+      })
+    ),
+    main: PropTypes.objectOf(PropTypes.number),
+  }),
+  fiveDaysWeather: PropTypes.shape({
+    daily: PropTypes.arrayOf(PropTypes.object),
+  }),
+  currentDate: PropTypes.string,
+  getFiveDaysDates: PropTypes.func,
+};
 
 export default Results;

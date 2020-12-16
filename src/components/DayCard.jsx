@@ -1,7 +1,8 @@
 import React from "react";
 import "./DayCard.css";
+import PropTypes from "prop-types";
 
-function DayCard({ icon, temp, date }) {
+const DayCard = ({ icon, temp, date }) => {
   return (
     <div className="card">
       <div className="card__date">{date}</div>
@@ -13,6 +14,12 @@ function DayCard({ icon, temp, date }) {
       <div className="card__temp">{temp}&deg;</div>
     </div>
   );
-}
+};
+
+DayCard.propTypes = {
+  icon: PropTypes.string,
+  temp: PropTypes.number,
+  date: PropTypes.string,
+};
 
 export default DayCard;
