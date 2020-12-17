@@ -1,12 +1,13 @@
 # Weather App
 Приложение погоды.
-### `Использованные технологии`
+### `Использованные технологии:`
 <ul>
 <li>React</li>
 <li>Redux</li>
 <li>Redux Thunk</li>
 <li>Prop Types</li>
 <li>Axios</li>
+<li>Jest\Enzyme</li>
 </ul>
 
 ### `npm install`
